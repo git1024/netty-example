@@ -19,6 +19,12 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String>{
 
     }
 
+    /**
+     * 客户端，服务器端启动后没有数据信息，
+     * 重写此方法，发起数据，就有客户端和服务器端的数据交流了
+     * @param ctx
+     * @throws Exception
+     */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush("客户端说话");
