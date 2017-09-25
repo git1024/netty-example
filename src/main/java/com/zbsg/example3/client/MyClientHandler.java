@@ -19,6 +19,11 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String>{
 
     }
 
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        ctx.writeAndFlush("客户端说话");
+    }
+
     /**
      * 异常处理
      * @param ctx
